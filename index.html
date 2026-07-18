@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Estrés - Triunfando Con Éxitos</title>
+    <!-- Google Fonts: Inter para máxima legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS para el diseño responsivo moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            beige: '#E5E1D6',   /* Fondo principal de marca */
+                            burdeos: '#87153D', /* Color principal: títulos, botones, acentos */
+                            negro: '#282828',   /* Texto principal */
+                            gris: '#928781',    /* Texto secundario, elementos neutros */
+                            dorado: '#C9A84C'   /* Firma, detalles premium */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome para iconos limpios de bienestar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Animaciones personalizadas */
+        .fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .progress-transition {
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#87153d0d 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-brand-beige text-brand-negro font-sans min-h-screen bg-pattern flex flex-col justify-between">
+
+    <!-- Cabecera -->
+    <header class="w-full bg-white border-b border-brand-beige shadow-sm py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-brand-burdeos to-brand-dorado rounded-full flex items-center justify-center shadow-md">
+                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M3 12h18m-3-6L6 18M6 6l12 12" />
+                        <circle cx="12" cy="12" r="3" fill="currentColor" class="text-white"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-sm font-black tracking-wider uppercase text-brand-negro">Triunfando Con Éxitos</h1>
+                    <p class="text-xs text-brand-gris font-medium">Vuelve a mirarte</p>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-brand-burdeos bg-brand-burdeos/10 px-3 py-1.5 rounded-full">
+                <i class="fa-solid fa-heart-circle-check"></i>
+                <span>Test Basado en Evidencia</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal de la App -->
+    <main class="flex-grow max-w-2xl w-full mx-auto px-4 py-8 flex items-center justify-center">
+
+        <!-- PANTALLA 1: Bienvenida -->
+        <div id="welcome-screen" class="bg-white w-full rounded-3xl shadow-xl p-6 sm:p-10 border border-brand-dorado/20 text-center fade-in">
+            <span class="inline-block bg-brand-dorado/15 text-brand-burdeos text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+                Recurso Gratuito para YouTube
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-negro tracking-tight mb-4 leading-tight">
+                ¿Cuál es tu nivel de <span class="text-brand-burdeos">Estrés Actual</span>?
+            </h2>
+            <p class="text-brand-gris text-base mb-8 max-w-lg mx-auto">
+                Basado en el documento original <strong class="text-brand-burdeos">8 Claves para Manejar el Estrés</strong>. Descubre en 1 minuto qué clave de bienestar necesitas aplicar hoy mismo y obtén un plan de acción para recuperar tu calidad de vida.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 text-left text-xs font-medium text-brand-gris">
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-magnifying-glass text-brand-burdeos"></i> <span>1. Autoobservación</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-ban text-brand-burdeos"></i> <span>2. Límites y No</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-bed text-brand-burdeos"></i> <span>3. Descanso Ideal</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-apple-whole text-brand-burdeos"></i> <span>4. Nutrición Sana</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-bolt text-brand-burdeos"></i> <span>5. Ejercicio Activo</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-brain text-brand-burdeos"></i> <span>6. Conciencia Plena</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-spa text-brand-burdeos"></i> <span>7. Relajación</span></div>
+                <div class="flex items-center space-x-2 p-2 bg-brand-beige/60 rounded-xl"><i class="fa-solid fa-user-doctor text-brand-burdeos"></i> <span>8. Ayuda Experta</span></div>
+            </div>
+
+            <button onclick="startQuiz()" class="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-brand-burdeos to-brand-burdeos/90 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-lg flex items-center justify-center space-x-2 mx-auto">
+                <span>Comenzar Test Gratis</span>
+                <i class="fa-solid fa-circle-play"></i>
+            </button>
+            <p class="text-xs text-brand-gris mt-4 flex items-center justify-center space-x-1">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>No guardamos datos personales. Tu privacidad es 100% segura.</span>
+            </p>
+        </div>
+
+        <!-- PANTALLA 2: Cuestionario -->
+        <div id="quiz-screen" class="hidden bg-white w-full rounded-3xl shadow-xl p-6 sm:p-10 border border-brand-beige fade-in">
+            <div class="mb-6">
+                <div class="flex justify-between items-center text-xs font-semibold text-brand-gris uppercase tracking-widest mb-2">
+                    <span id="quiz-progress-label">Pregunta 1 de 8</span>
+                    <span id="quiz-percentage">12% Completado</span>
+                </div>
+                <div class="w-full bg-brand-beige h-2.5 rounded-full overflow-hidden">
+                    <div id="quiz-progress-bar" class="bg-brand-burdeos h-full progress-transition" style="width: 12%"></div>
+                </div>
+            </div>
+
+            <div id="question-box" class="mb-8">
+                <div class="flex items-center space-x-2.5 mb-2">
+                    <span id="question-badge" class="bg-brand-burdeos/10 text-brand-burdeos text-xs font-extrabold uppercase px-2.5 py-1 rounded-md">
+                        Clave 1: Identificación
+                    </span>
+                </div>
+                <h3 id="question-text" class="text-xl sm:text-2xl font-bold text-brand-negro leading-snug text-justify">
+                    ¿Pregunta de prueba?
+                </h3>
+            </div>
+
+            <div class="space-y-4" id="options-container"></div>
+
+            <div class="mt-8 pt-6 border-t border-brand-beige flex items-center justify-between text-xs text-brand-gris">
+                <span>Autor del Test: <strong>Triunfando Con Éxitos</strong></span>
+                <span class="italic"><i class="fa-solid fa-quote-left mr-1"></i>Vuelve a mirarte</span>
+            </div>
+        </div>
+
+        <!-- PANTALLA 2.5: Captura de email -->
+        <div id="email-gate-screen" class="hidden bg-white w-full rounded-3xl shadow-xl p-6 sm:p-10 border border-brand-dorado/20 text-center fade-in">
+            <span class="inline-block bg-brand-dorado/15 text-brand-burdeos text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+                <i class="fa-solid fa-circle-check mr-1"></i> Test completado
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-negro tracking-tight mb-3 leading-tight">
+                Tu resultado ya está listo
+            </h2>
+            <p class="text-brand-gris text-base mb-6 max-w-md mx-auto">
+                Dime dónde te lo envío y te muestro tu nivel de estrés, tu clave de acción recomendada, y de regalo mis
+                <strong class="text-brand-burdeos">8 Claves para Manejar el Estrés en PDF</strong>.
+            </p>
+
+            <form id="email-gate-form" class="max-w-sm mx-auto text-left space-y-4" onsubmit="submitEmailGate(event)">
+                <div>
+                    <label for="gate-name" class="block text-xs font-bold text-brand-gris uppercase tracking-wide mb-1.5">Nombre</label>
+                    <input type="text" id="gate-name" required
+                        class="w-full px-4 py-3 rounded-xl border-2 border-brand-beige focus:border-brand-burdeos focus:outline-none text-base"
+                        placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label for="gate-email" class="block text-xs font-bold text-brand-gris uppercase tracking-wide mb-1.5">Email</label>
+                    <input type="email" id="gate-email" required
+                        class="w-full px-4 py-3 rounded-xl border-2 border-brand-beige focus:border-brand-burdeos focus:outline-none text-base"
+                        placeholder="tu@email.com">
+                </div>
+
+                <button type="submit" id="gate-submit-btn"
+                    class="w-full px-8 py-4 bg-gradient-to-r from-brand-burdeos to-brand-burdeos/90 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-lg flex items-center justify-center space-x-2">
+                    <span id="gate-submit-text">Ver mi resultado + Regalo</span>
+                    <i class="fa-solid fa-gift"></i>
+                </button>
+                <p id="gate-error" class="hidden text-xs text-brand-burdeos text-center"></p>
+            </form>
+            <p class="text-xs text-brand-gris mt-4 flex items-center justify-center space-x-1">
+                <i class="fa-solid fa-lock"></i>
+                <span>Sin spam. Puedes darte de baja cuando quieras.</span>
+            </p>
+        </div>
+
+        <!-- PANTALLA 3: Resultados -->
+        <div id="results-screen" class="hidden bg-white w-full rounded-3xl shadow-xl p-6 sm:p-10 border border-brand-dorado/20 fade-in">
+
+            <div class="text-center mb-6">
+                <span class="inline-block bg-brand-dorado/15 text-brand-burdeos text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+                    Diagnóstico Completo de Estrés
+                </span>
+                <h2 class="text-3xl font-extrabold text-brand-negro">Tu Resultado es:</h2>
+            </div>
+
+            <div class="bg-brand-beige/50 rounded-2xl p-6 mb-8 text-center border border-brand-beige">
+                <div id="badge-container" class="inline-block px-5 py-2.5 rounded-2xl text-lg font-black uppercase tracking-wider mb-3">
+                    Nivel de Estrés: Alerta Roja
+                </div>
+
+                <div class="text-brand-gris text-sm font-semibold mb-2">
+                    Puntuación obtenida: <span id="score-text" class="text-brand-negro font-bold text-lg">18</span> de 24 puntos
+                </div>
+
+                <p id="result-description" class="text-brand-gris text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                    Tu cuerpo y tu mente te están pidiendo a gritos un descanso.
+                </p>
+            </div>
+
+            <div class="border-l-4 border-brand-burdeos bg-brand-burdeos/5 p-4 rounded-r-2xl mb-8">
+                <h4 class="text-brand-burdeos font-extrabold text-sm uppercase tracking-wide flex items-center space-x-2">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Clave Recomendada de Acción Inmediata:</span>
+                </h4>
+                <p id="key-recommendation" class="text-brand-negro/80 text-sm mt-1">
+                    Necesitas priorizar el descanso restaurativo.
+                </p>
+            </div>
+
+            <div class="bg-brand-dorado/10 border border-brand-dorado/30 rounded-2xl p-4 mb-8 text-center">
+                <p class="text-sm text-brand-negro font-semibold">
+                    <i class="fa-solid fa-envelope-circle-check text-brand-burdeos mr-1.5"></i>
+                    Te acabamos de enviar tus 8 Claves del Estrés en PDF a tu correo. Revisa también spam/promociones.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-tr from-brand-negro to-brand-negro/80 text-white rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-xl mb-8">
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-brand-dorado opacity-20 rounded-full blur-xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-32 h-32 bg-brand-burdeos opacity-30 rounded-full blur-xl"></div>
+
+                <span class="inline-block bg-brand-dorado text-brand-negro text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+                    Programa de 21 Días Recomendado
+                </span>
+                <h3 class="text-xl sm:text-2xl font-black mb-3">Programa: "21 Días Sin Estrés"</h3>
+                <p class="text-white/70 text-sm mb-6 max-w-md mx-auto leading-relaxed">
+                    No recorras este camino a solas. Súmate a la formación intensiva donde te acompañaremos paso a paso a integrar de verdad estas 8 claves prácticas en tu vida diaria.
+                </p>
+
+                <a href="https://www.youtube.com/@triunfandoconexito" target="_blank" id="cta-button" class="inline-flex items-center space-x-2.5 px-8 py-4 bg-brand-dorado hover:bg-brand-dorado/90 text-brand-negro font-extrabold rounded-2xl shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-base">
+                    <span>Quiero el Programa de 21 Días</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <p class="text-xs text-white/50 mt-3">Únete hoy y obtén acceso al grupo privado de profesionales.</p>
+            </div>
+
+            <div class="border-t border-brand-beige pt-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-brand-dorado/10 p-4 rounded-2xl border border-brand-dorado/20">
+                    <div class="flex items-start space-x-3 text-left">
+                        <span class="text-2xl mt-0.5">💬</span>
+                        <div>
+                            <h5 class="text-sm font-bold text-brand-negro">¡Comparte tu resultado en YouTube!</h5>
+                            <p class="text-xs text-brand-gris mt-0.5">Copia tu resultado y pégalo en la sección de comentarios del video para que podamos darte feedback personalizado.</p>
+                        </div>
+                    </div>
+                    <button onclick="copyToClipboard()" class="w-full sm:w-auto px-4 py-2.5 bg-brand-negro hover:bg-brand-negro/80 text-white font-bold text-xs rounded-xl transition-colors duration-200 flex items-center justify-center space-x-2 shrink-0">
+                        <i class="fa-solid fa-copy"></i>
+                        <span id="copy-text">Copiar mi Resultado</span>
+                    </button>
+                </div>
+            </div>
+
+            <button onclick="resetQuiz()" class="mt-8 text-center block w-full text-xs font-semibold text-brand-gris hover:text-brand-negro transition-colors duration-200">
+                <i class="fa-solid fa-rotate-left mr-1"></i> Volver a realizar el test
+            </button>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center border-t border-brand-beige bg-white text-xs text-brand-gris">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>© 2026 <strong>Triunfando Con Éxitos</strong>. Todos los derechos reservados.</p>
+            <p>Sigue a la comunidad en Redes Sociales: <a href="https://www.youtube.com/@triunfandoconexito" target="_blank" class="text-brand-burdeos font-bold hover:underline">@triunfandoconexito</a></p>
+            <p class="text-[10px] text-brand-gris/70 max-w-md mx-auto leading-normal">Aviso Legal: Este test es una guía de autoobservación basada en el PDF informativo. No reemplaza un diagnóstico médico, psiquiátrico ni psicológico profesional. Si experimentas sintomatología persistente, por favor consulta con un terapeuta calificado.</p>
+        </div>
+    </footer>
+
+    <script>
+        // URL del webhook de n8n que ya conecta con Mailrelay (confirmado funcionando)
+        const SUBSCRIBE_WEBHOOK_URL = "https://jose-ordaz-n8n.vplkfg.easypanel.host/webhook/mailrelay-subscribe";
+
+        const questions = [
+            {
+                badge: "Clave 1: Autoobservación y Fuentes",
+                text: "Cuando termina un día agotador, ¿sabes identificar exactamente qué situaciones u obstáculos físicos/emocionales te generaron esa tensión?",
+                options: [
+                    { text: "No, suelo vivir en piloto automático sin registrar mis emociones ni detonantes.", points: 3 },
+                    { text: "A veces, pero suelo entrar en un ciclo de preocupación futura o ansiedad negativa difícil de frenar.", points: 2 },
+                    { text: "Sí, me tomo el tiempo para reflexionar y detectar qué me genera ansiedad sin juzgarme.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 2: Establecer Límites",
+                text: "Ante una sobrecarga importante de responsabilidades y actividades diarias, ¿cómo gestionas tus límites?",
+                options: [
+                    { text: "Asumo absolutamente todo yo solo/a. Me cuesta mucho decir 'no' a los demás.", points: 3 },
+                    { text: "Intento priorizar, pero las exigencias del entorno me terminan rebasando y abrumando.", points: 2 },
+                    { text: "Defino mis prioridades claramente, sé decir 'no' cuando es necesario y delego.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 3: Descanso Adecuado",
+                text: "Frente a los desafíos cotidianos, ¿cómo calificarías tu calidad de sueño y la capacidad de regenerar tu energía?",
+                options: [
+                    { text: "Sufro de insomnio, tensión muscular severa y me despierto sintiéndome igual de agotado/a.", points: 3 },
+                    { text: "Duermo a ratos. Noto cansancio intermitente y bajones de ánimo importantes durante el día.", points: 2 },
+                    { text: "Duermo bien. Mi descanso equilibra mis niveles de cortisol y me permite tomar decisiones claras.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 4: Alimentación Equilibrada",
+                text: "Cuando experimentas un periodo de alto estrés laboral o personal, ¿cómo reaccionas frente a los alimentos?",
+                options: [
+                    { text: "Recurro de forma desmedida a comida chatarra, azúcares rápidos, grasas saturadas o cafeína.", points: 3 },
+                    { text: "Mi dieta se vuelve algo desordenada, lo que me genera picos rápidos de energía seguidos de caídas drásticas.", points: 2 },
+                    { text: "Me alimento de forma consciente (frutas, verduras, carbohidratos complejos) para combatir el estrés celular.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 5: Ejercicio Regular",
+                text: "La actividad física puede liberar tensiones acumuladas y generar endorfinas. En tu rutina diaria, el ejercicio es:",
+                options: [
+                    { text: "Inexistente. Llevo una vida sedentaria por completo y no libero cortisol.", points: 3 },
+                    { text: "Ocasional. Sé que me ayuda, pero siempre termino dejándolo de lado ante cualquier contratiempo.", points: 2 },
+                    { text: "Un hábito regular (caminar, nadar, bailar, yoga), el cual adapto felizmente a mis posibilidades.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 6: Conciencia Plena",
+                text: "La práctica del Mindfulness nos invita a vivir el presente. Cuando surgen contratiempos, ¿dónde suele estar tu mente?",
+                options: [
+                    { text: "Atrapada en un bucle mental constante, rumiando el pasado o temiendo un futuro negativo.", points: 3 },
+                    { text: "Intentando calmarme, pero las distracciones diarias o la prisa me impiden centrarme.", points: 2 },
+                    { text: "Presente. Logro tomar distancia de mis pensamientos ansiosos y respirar profundamente.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 7: Momentos de Relajación",
+                text: "Aparte de dormir, ¿reservas intencionalmente espacios diarios de silencio o desconexión física/mental?",
+                options: [
+                    { text: "No tengo tiempo para eso. Considero una pérdida de tiempo quedarme en silencio.", points: 3 },
+                    { text: "Solo me detengo a relajarme cuando ya colapsé físicamente o mi cuerpo se enferma.", points: 2 },
+                    { text: "Sí, ya sea meditando, paseando en la naturaleza o tomando baños relajantes para calmar la mente.", points: 1 }
+                ]
+            },
+            {
+                badge: "Clave 8: Buscar Ayuda Profesional",
+                text: "Si sientes que el agobio por el estrés te sobrepasa significativamente, ¿cómo contemplas pedir apoyo externo?",
+                options: [
+                    { text: "Lo veo como debilidad. Me aíslo e intento forzarme a salir de esto yo solo/a.", points: 3 },
+                    { text: "Me cuesta admitirlo y tardo demasiado en pedir ayuda o consejo de mi entorno.", points: 2 },
+                    { text: "Lo considero un acto valiente de autocuidado y estoy dispuesto/a a acudir a terapia o formación.", points: 1 }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const emailGateScreen = document.getElementById('email-gate-screen');
+        const resultsScreen = document.getElementById('results-screen');
+
+        const progressLabel = document.getElementById('quiz-progress-label');
+        const progressPercentage = document.getElementById('quiz-percentage');
+        const progressBar = document.getElementById('quiz-progress-bar');
+
+        const questionBadge = document.getElementById('question-badge');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+
+        function startQuiz() {
+            welcomeScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+            currentQuestionIndex = 0;
+            totalScore = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+
+            const currentNumber = currentQuestionIndex + 1;
+            const percentage = Math.round((currentQuestionIndex / questions.length) * 100);
+
+            progressLabel.innerText = `Pregunta ${currentNumber} de ${questions.length}`;
+            progressPercentage.innerText = `${percentage}% Completado`;
+            progressBar.style.width = `${percentage}%`;
+
+            questionBadge.innerText = currentQuestion.badge;
+            questionText.innerText = currentQuestion.text;
+
+            optionsContainer.innerHTML = '';
+            currentQuestion.options.forEach((opt, idx) => {
+                const label = ['A', 'B', 'C'][idx];
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-2xl border-2 border-brand-beige hover:border-brand-burdeos hover:bg-brand-burdeos/5 transition-all duration-200 flex items-start space-x-3 group relative overflow-hidden";
+                btn.onclick = () => selectOption(opt.points);
+                btn.innerHTML = `
+                    <span class="w-8 h-8 rounded-xl bg-brand-beige group-hover:bg-brand-burdeos group-hover:text-white flex items-center justify-center text-xs font-bold shrink-0 transition-colors duration-200">
+                        ${label}
+                    </span>
+                    <span class="text-sm sm:text-base font-medium text-brand-negro/80 pt-1 group-hover:text-brand-negro transition-colors duration-200">
+                        ${opt.text}
+                    </span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(points) {
+            totalScore += points;
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                quizScreen.classList.add('opacity-40');
+                setTimeout(() => {
+                    showQuestion();
+                    quizScreen.classList.remove('opacity-40');
+                }, 150);
+            } else {
+                quizScreen.classList.add('hidden');
+                emailGateScreen.classList.remove('hidden');
+            }
+        }
+
+        async function submitEmailGate(event) {
+            event.preventDefault();
+            const name = document.getElementById('gate-name').value.trim();
+            const email = document.getElementById('gate-email').value.trim();
+            const btn = document.getElementById('gate-submit-btn');
+            const btnText = document.getElementById('gate-submit-text');
+            const errorEl = document.getElementById('gate-error');
+
+            btn.disabled = true;
+            btnText.innerText = "Enviando...";
+            errorEl.classList.add('hidden');
+
+            try {
+                const resp = await fetch(SUBSCRIBE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email })
+                });
+                // Aunque falle el suscriptor (ej. ya existia), mostramos el resultado igual.
+                // No bloqueamos la experiencia del usuario por un error de backend.
+            } catch (err) {
+                console.error('Error al suscribir:', err);
+            }
+
+            emailGateScreen.classList.add('hidden');
+            resultsScreen.classList.remove('hidden');
+            showResults();
+        }
+
+        function showResults() {
+            const badgeContainer = document.getElementById('badge-container');
+            const scoreText = document.getElementById('score-text');
+            const resultDescription = document.getElementById('result-description');
+            const keyRecommendation = document.getElementById('key-recommendation');
+            const ctaButton = document.getElementById('cta-button');
+
+            scoreText.innerText = totalScore;
+
+            if (totalScore >= 18) {
+                badgeContainer.innerText = "🚨 Alerta Roja: Estrés Crónico";
+                badgeContainer.className = "inline-block px-5 py-2.5 rounded-2xl text-lg font-black uppercase tracking-wider mb-3 bg-brand-burdeos/10 text-brand-burdeos border border-brand-burdeos/30";
+                resultDescription.innerText = "¡Tu cuerpo y mente están al límite! Te encuentras en un estado de 'piloto automático acelerado', descuidando los límites básicos del descanso y asumiendo demasiadas cargas. El nivel de cortisol en tu organismo está impidiendo tu claridad mental.";
+                keyRecommendation.innerText = "Priorizar de inmediato la Clave 2 (Establecer Límites) y la Clave 8 (Pedir Apoyo Experto). Necesitas frenar y resetear tus hábitos antes de experimentar un colapso físico mayor.";
+                ctaButton.href = "https://www.youtube.com/@triunfandoconexito?sub_confirmation=1";
+                ctaButton.innerHTML = `<span>Inscribirme en "21 Días Sin Estrés"</span> <i class="fa-solid fa-fire-flame-curved"></i>`;
+            } else if (totalScore >= 12) {
+                badgeContainer.innerText = "⚖️ En la Cuerda Floja: Estrés Moderado";
+                badgeContainer.className = "inline-block px-5 py-2.5 rounded-2xl text-lg font-black uppercase tracking-wider mb-3 bg-brand-dorado/15 text-brand-dorado border border-brand-dorado/40";
+                resultDescription.innerText = "Aunque haces esfuerzos por organizar tus hábitos de alimentación o descanso, el ritmo acelerado del entorno y la falta de constancia te provocan picos breves de bienestar seguidos de fuertes bajones de energía y ansiedad.";
+                keyRecommendation.innerText = "Fortalecer la Clave 3 (Descanso Adecuado) y la Clave 6 (Práctica de Conciencia Plena / Mindfulness). Desarrollar un anclaje diario de calma te dará la resiliencia que necesitas.";
+                ctaButton.href = "https://www.youtube.com/@triunfandoconexito?sub_confirmation=1";
+                ctaButton.innerHTML = `<span>Comenzar Formación (21 Días)</span> <i class="fa-solid fa-spa"></i>`;
+            } else {
+                badgeContainer.innerText = "🍃 En Crecimiento: Estrés Controlado";
+                badgeContainer.className = "inline-block px-5 py-2.5 rounded-2xl text-lg font-black uppercase tracking-wider mb-3 bg-brand-gris/15 text-brand-negro border border-brand-gris/30";
+                resultDescription.innerText = "¡Enhorabuena! Tienes un excelente nivel de autoobservación, sabes poner límites claros y tu estilo de vida refleja bienestar. Sin embargo, el estrés siempre busca ventanas de oportunidad. Tu tarea es optimizar tus defensas emocionales.";
+                keyRecommendation.innerText = "Fomentar la Clave 7 (Momentos de Relajación intencionados) y expandir tu bienestar a través de la comunidad compartiendo tu experiencia de autocuidado con otros.";
+                ctaButton.href = "https://www.youtube.com/@triunfandoconexito?sub_confirmation=1";
+                ctaButton.innerHTML = `<span>Unirse a la Comunidad de Calma</span> <i class="fa-solid fa-user-group"></i>`;
+            }
+        }
+
+        function getOutcomeMessage() {
+            let label = "";
+            if (totalScore >= 18) label = "🚨 Alerta Roja: Estrés Crónico";
+            else if (totalScore >= 12) label = "⚖️ En la Cuerda Floja: Estrés Moderado";
+            else label = "🍃 En Crecimiento: Estrés Controlado";
+
+            return `¡Acabo de hacer el Test de Estrés de @TriunfandoConExito! 🌟\n` +
+                   `Mi resultado: ${label} (${totalScore}/24 puntos)\n` +
+                   `Recomendación clave: ${document.getElementById('key-recommendation').innerText}\n` +
+                   `Haz el tuyo gratis. Vuelve a mirarte. 💪🍃`;
+        }
+
+        function copyToClipboard() {
+            const message = getOutcomeMessage();
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = message;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999);
+
+            try {
+                document.execCommand("copy");
+                const copyBtnText = document.getElementById('copy-text');
+                copyBtnText.innerText = "¡Copiado! Pégalo en YouTube";
+                copyBtnText.classList.add('text-brand-dorado');
+                setTimeout(() => {
+                    copyBtnText.innerText = "Copiar mi Resultado";
+                    copyBtnText.classList.remove('text-brand-dorado');
+                }, 3000);
+            } catch (err) {
+                console.error("No se pudo copiar el texto", err);
+            }
+
+            document.body.removeChild(tempTextArea);
+        }
+
+        function resetQuiz() {
+            resultsScreen.classList.add('hidden');
+            document.getElementById('gate-name').value = '';
+            document.getElementById('gate-email').value = '';
+            welcomeScreen.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
